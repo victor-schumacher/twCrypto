@@ -1,13 +1,18 @@
 package main
 
 import (
-	"cryptoTwitter/server/crypto"
-	"fmt"
+	"github.com/SchumacherVictor/twCrypto/server/crypto"
+	"github.com/SchumacherVictor/twCrypto/server/twitter"
 )
 
 func main() {
+	_ = "\"BTC, XLM, XMR, ETH, ZEC\""
 
-	a := crypto.GetCryptoData("ETC", "BRL")
+	twitter.PostTweet(twitter.FormatTweet(crypto.GetCryptoData("ETH", "BRL")))
 
-	fmt.Println(a)
+
+
+
+
+
 }
