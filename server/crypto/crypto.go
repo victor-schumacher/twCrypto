@@ -1,8 +1,8 @@
 package crypto
 
 import (
-	"cryptoTwitter/server"
 	"encoding/json"
+	"github.com/SchumacherVictor/twCrypto/server"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -11,7 +11,7 @@ import (
 
 func GetCryptoData(cc string, c string) server.CryptoCurrency {
 	op := "sell"
-	resp, err := http.Get(BuildUrl(cc,c,op))
+	resp, err := http.Get(BuildUrl(cc, c, op))
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -35,7 +35,7 @@ func GetCryptoData(cc string, c string) server.CryptoCurrency {
 	crypto.SellPrice = rd.Data.Amount
 
 	op2 := "buy"
-	resp2, err := http.Get(BuildUrl(cc,c,op2))
+	resp2, err := http.Get(BuildUrl(cc, c, op2))
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -59,7 +59,7 @@ func GetCryptoData(cc string, c string) server.CryptoCurrency {
 }
 
 func BuildUrl(cc string, c string, op string) string {
-	//read about const in golang and move this strings to one place
+
 	base := "https://api.coinbase.com/v2/prices/"
 	return base + strings.ToUpper(cc) + "-" + strings.ToUpper(c) + "/" + strings.ToLower(op)
 
