@@ -17,3 +17,4 @@ type (
 	}
 	CryptoCurrencies[] CryptoCurrency
 )
+

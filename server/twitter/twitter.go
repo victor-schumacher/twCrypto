@@ -1,10 +1,12 @@
 package twitter
 
 import (
+	"os"
+
 	"github.com/SchumacherVictor/twCrypto/server"
+
 	"github.com/dghubble/go-twitter/twitter"
 	"github.com/dghubble/oauth1"
-	"os"
 )
 
 func FormatTweet(c server.CryptoCurrency) string {
