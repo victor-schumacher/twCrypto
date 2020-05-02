@@ -10,7 +10,7 @@ import (
 	"github.com/SchumacherVictor/twCrypto/server"
 )
 
-func GetCryptoData(cc string, c string) server.CryptoCurrency {
+func GetCrypto(cc string, c string) server.CryptoCurrency {
 
 	var crypto server.CryptoCurrency
 	crypto.Name = strings.ToUpper(cc)
