@@ -14,9 +14,9 @@ func main() {
 	var cc = [5]string{"BTC", "ETH", "XRP", "LTC", "BCH"}
 	i := 0
 	c := gron.New()
-	c.AddFunc(gron.Every(10*time.Minute), func() {
+	c.AddFunc(gron.Every(10*time.Second), func() {
 		c := crypto.GetCrypto(cc[i], "USD")
-		twitter.PostTweet(twitter.FormatTweet(c.Name, c.SellPrice, c.BuyPrice))
+		twitter.PostTweet(twitter.FormatTweet(c))
 		i++
 		if i == 5 {
 			i = 0

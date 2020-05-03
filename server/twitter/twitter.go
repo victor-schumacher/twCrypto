@@ -1,17 +1,19 @@
 package twitter
 
 import (
+	"github.com/SchumacherVictor/twCrypto/server"
 	"os"
 
 	"github.com/dghubble/go-twitter/twitter"
 	"github.com/dghubble/oauth1"
 )
 
-func FormatTweet(cryptocurrency string, sellPrice string, buyPrice string) string {
-	t := "Cryptocurrency ➔ " + cryptocurrency + "\n" +
-		 "Sell price ➔ "+sellPrice+ "$\n" +
-		 "Buy price ➔ "+buyPrice+"$\n"+
-		 "#crypocurrencies\n#"+cryptocurrency
+func FormatTweet(c server.CryptoCurrency) string {
+	t := "Cryptocurrency ➔ " + c.Name + "\n" +
+		"Spot ➔ " + c.SpotPrice + "$\n" +
+		"Sell ➔ " + c.SellPrice + "$\n" +
+		"Buy ➔ " + c.BuyPrice + "$\n" +
+		"#crypocurrencies 😆\n#" + c.Name
 	return t
 }
 
